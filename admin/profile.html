@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link href="css/simple-sidebar.css" rel="stylesheet">
+		<title>Devices Management</title>
+		<link rel="icon" href="../images/smartphone-icon.png">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/ekko-lightbox.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="d-flex" id="wrapper">
+			<!-- Sidebar -->
+			<div class="bg-light border-right" id="sidebar-wrapper">
+				<div class="sidebar-heading">2ndBest</div>
+				<div class="list-group list-group-flush">
+					<a href="index.html" class="list-group-item list-group-item-action bg-light">Devices Management</a>
+					<a href="profile.html" class="list-group-item list-group-item-action bg-light">Profile</a>
+				</div>
+			</div>
+			<!-- /#sidebar-wrapper -->
+			<!-- Page Content -->
+			<div id="page-content-wrapper">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+					<button class="btn btn-primary" id="menu-toggle"><i class="fa fa-list-ul"></i></button>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+							<li class="nav-item active">
+								<a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../index.html">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="container-fluid">
+					<h1>Admin ID</h1>
+					<form id="formAdmin">
+						<div class="row form-group">
+							<div class="col-1">Email:</div>
+							<div class="col-3">
+								<input type="text" id="email" class="form-control" name="email" 
+								data-rule-required="true"
+								data-rule-email="true">
+							</div>
+						</div>
+						<div id="wrongEmail"></div>
+						<div class="row form-group">
+							<div class="col-1">Password:</div>
+							<div class="col-3"><input type="password" id="password" class="form-control" name="password" data-rule-required="true"></div>
+						</div>
+						<div class="row form-group">
+							<div class="col-1"></div>
+							<div class="col-1"><a href="javascript:void(0);" class="btn btn-primary" onclick="adminIdSave()">Save</a></div>
+							<div class="col-1"><a href="index.html" class="btn btn-secondary">Cancel</a></div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<!-- /#page-content-wrapper -->
+		</div>
+		<!-- /#wrapper -->
+		
+		<script src="../js/bootstrap.bundle.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/jquery.validate.min.js"></script>
+		<script src="../js/bootbox.min.js"></script>
+		<script src="js/admin.js"></script>
+		<script>
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link href="css/simple-sidebar.css" rel="stylesheet">
+		<title>Devices Management</title>
+		<link rel="icon" href="../images/smartphone-icon.png">
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/ekko-lightbox.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<div class="d-flex" id="wrapper">
+			<!-- Sidebar -->
+			<div class="bg-light border-right" id="sidebar-wrapper">
+				<div class="sidebar-heading">2ndBest</div>
+				<div class="list-group list-group-flush">
+					<a href="index.html" class="list-group-item list-group-item-action bg-light">Devices Management</a>
+					<a href="profile.html" class="list-group-item list-group-item-action bg-light">Profile</a>
+				</div>
+			</div>
+			<!-- /#sidebar-wrapper -->
+			<!-- Page Content -->
+			<div id="page-content-wrapper">
+				<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+					<button class="btn btn-primary" id="menu-toggle"><i class="fa fa-list-ul"></i></button>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+							<li class="nav-item active">
+								<a class="nav-link" href="../index.html">Home <span class="sr-only">(current)</span></a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="../index.html">Logout</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+				<div class="container-fluid">
+					<h1>Devices Management</h1>
+					<a href="javascript:void(0);" class="btn btn-primary" onclick="device.openModal()"><i class="fa fa-plus"></i> Add Device</a>
+					<table class="table table-hover mt-3 table-responsive table-bordered">
+						<thead>
+							<tr class="thead-dark">
+								<th>ID</th>
+								<th>Device's Name</th>
+								<th>Images</th>
+								<th>Brand</th>
+								<th>CPU</th>
+								<th>Screen</th>
+								<th>OS</th>
+								<th>Rear Camera</th>
+								<th>Front Camera</th>
+								<th>Ram</th>
+								<th>Rom</th>
+								<th>Status</th>
+								<th>Price</th>
+								<th>Action</th>
+							</tr>
+						</thead>
+						<tbody id="tbDevices">
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<!-- /#page-content-wrapper -->
+		</div>
+		<!-- /#wrapper -->
+		<!-- Modal -->
+		<div id="myModal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-dialog modal-lg">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="deviceModalTitle">Device details:</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form id="formAddEditDevice">
+							<input hidden name="id" id="id" value="0">
+							<div class="row form-group">
+								<div class="col-3">Device's Name:</div>
+								<div class="col-9"><input type="text" id="Name" class="form-control" name="Name" data-rule-required="true"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Image's URLs:</div>
+								<div class="col-9"><input type="text" id="Images0" class="form-control" data-rule-url="true" placeholder="Image's URL 1"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">
+								</div>
+								<div class="col-9"><input type="text" id="Images1" class="form-control" data-rule-url="true" placeholder="Image's URL 2"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">
+								</div>
+								<div class="col-9"><input type="text" id="Images2" class="form-control" data-rule-url="true" placeholder="Image's URL 3"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Brand:</div>
+								<div class="col-3 ">
+									<select name="Brand" id="Brand" class="form-control" name="Brand" data-rule-required="true">
+									</select>
+								</div>
+								<div class="col-3">CPU:</div>
+								<div class="col-3"><input type="text" id="CPU" class="form-control"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Screen:</div>
+								<div class="col-3"><input type="text" id="Screen" class="form-control"></div>
+								<div class="col-3">OS:</div>
+								<div class="col-3"><input type="text" id="OS" class="form-control"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Rear Camera:</div>
+								<div class="col-3"><input type="text" id="RearCamera" class="form-control"></div>
+								<div class="col-3">Front Camera:</div>
+								<div class="col-3"><input type="text" id="FrontCamera" class="form-control"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Ram (GB):</div>
+								<div class="col-3"><input type="text" id="Ram" class="form-control"></div>
+								<div class="col-3">Rom (GB):</div>
+								<div class="col-3"><input type="text" id="Rom" class="form-control"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Status (%):</div>
+								<div class="col-3"><input type="text" id="Status" class="form-control" data-rule-range="1,100"></div>
+								<div class="col-3">Price (₫):</div>
+								<div class="col-3"><input type="text" id="Price" class="form-control" name="Price" data-rule-required="true" data-rule-number="true"></div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="javascript:void(0);" class="btn btn-primary" onclick="device.save()" id="addButton">Add</a>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="../js/bootstrap.bundle.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
+		<script src="../js/bootstrap.min.js"></script>
+		<script src="../js/ekko-lightbox.min.js"></script>
+		<script src="../js/jquery.validate.min.js"></script>
+		<script src="../js/bootbox.min.js"></script>
+		<script src="js/device.js"></script>
+		<script>
+			$("#menu-toggle").click(function(e) {
+				e.preventDefault();
+				$("#wrapper").toggleClass("toggled");
+			});
+		</script>
+	</body>
+</html>
