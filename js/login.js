@@ -1,4 +1,10 @@
-$(document).on('keypress',function(e) {
+$("#email").on('keypress',function(e) {
+    if(e.which == 13) {
+		login();
+    }
+});
+
+$("#password").on('keypress',function(e) {
     if(e.which == 13) {
 		login();
     }
