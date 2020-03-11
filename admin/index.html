@@ -7,6 +7,7 @@
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/ekko-lightbox.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 	<body>
@@ -40,8 +41,8 @@
 				</nav>
 				<div class="container-fluid">
 					<h1>Devices Management</h1>
-					<a href="javascript:void(0);" class="btn btn-primary" onclick="device.openModal()"><i class="fa fa-plus"></i> Add Device</a>
-					<table class="table table-hover mt-3 table-responsive table-bordered">
+					<a href="javascript:void(0);" class="btn btn-primary mb-3" onclick="device.openModal()"><i class="fa fa-plus"></i> Add Device</a>
+					<table class="table table-hover table-responsive table-bordered display" id="devicesManagement">
 						<thead>
 							<tr class="thead-dark">
 								<th>ID</th>
@@ -146,6 +147,7 @@
 		<script src="../js/ekko-lightbox.min.js"></script>
 		<script src="../js/jquery.validate.min.js"></script>
 		<script src="../js/bootbox.min.js"></script>
+		<script src="../js/jquery.dataTables.min.js"></script>
 		<script src="js/device.js"></script>
 		<script>
 			$("#menu-toggle").click(function(e) {
