@@ -31,12 +31,20 @@ productsList = function() {
 	})
 }
 
-$("#itemSearch").on('keydown',function() {
-    productSearch();
+$("#enterSearch").on('keypress',function(e) {
+    if(e.which == 13) {
+		productSearch();
+    }
 });
 
+$(function() {
+	$("#clickSearch").click(function() {
+		productSearch();
+	})
+})
+
 productSearch = function() {
-	let keyword = $("#itemSearch").val().toLowerCase();
+	let keyword = $("#enterSearch").val().toLowerCase();
 	
 	$.ajax({
 		url: "http://localhost:3000/Devices",
@@ -45,8 +53,11 @@ productSearch = function() {
 		success: function(data){
 			$("#Products").empty();
 			$.each(data, function(i, v){
-				let deviceSearch = v.Name.toLowerCase();
-				if (deviceSearch.includes(keyword)) {
+				let deviceName		= v.Name.toLowerCase();
+				let deviceBrand		= v.Brand.Name.toLowerCase();
+				let deviceCPU		= v.CPU.toLowerCase();
+				let deviceOS		= v.OS.toLowerCase();
+				if (deviceName.includes(keyword) || deviceBrand.includes(keyword) || deviceCPU.includes(keyword) || deviceOS.includes(keyword)) {
 					let imagesDevice = '<div class="row mx-auto">';
 					for (let i = 1; i < v.Images.length; i++) {
 						imagesDevice += '<a href="' + v.Images[i] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img src="' + v.Images[i] + '" height="50"></a>&nbsp;';
