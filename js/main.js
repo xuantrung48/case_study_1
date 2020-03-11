@@ -45,19 +45,19 @@ $(function() {
 
 productSearch = function() {
 	let keyword = $("#enterSearch").val().toLowerCase();
-	
+
 	$.ajax({
 		url: "http://localhost:3000/Devices",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
-			$("#Products").empty();
 			$.each(data, function(i, v){
 				let deviceName		= v.Name.toLowerCase();
 				let deviceBrand		= v.Brand.Name.toLowerCase();
 				let deviceCPU		= v.CPU.toLowerCase();
 				let deviceOS		= v.OS.toLowerCase();
 				if (deviceName.includes(keyword) || deviceBrand.includes(keyword) || deviceCPU.includes(keyword) || deviceOS.includes(keyword)) {
+					$("#Products").empty();
 					let imagesDevice = '<div class="row mx-auto">';
 					for (let i = 1; i < v.Images.length; i++) {
 						imagesDevice += '<a href="' + v.Images[i] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img src="' + v.Images[i] + '" height="50"></a>&nbsp;';
@@ -69,5 +69,5 @@ productSearch = function() {
 				}
 			})
 		}
-	})
+	});
 }
