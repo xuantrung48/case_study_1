@@ -4,7 +4,7 @@ body {
 
 #logo {
 	font-family: 'Monoton', cursive;
-	font-size: 50px;
+	font-size: 30px;
 }
 
 .image0 {
@@ -16,11 +16,40 @@ body {
 	height: 60px;
 }
 
-.search-container  {
-  margin-right: 20px;
-  font-size: 20px;
-}
-
 button {
   cursor: pointer;
+}
+* {
+  box-sizing: border-box;
+}
+
+#searchbox input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+}
+
+#searchbox button {
+  float: left;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+#searchbox button:hover {
+  background: #0b7dda;
+}
+
+#searchbox::after {
+  content: "";
+  clear: both;
+  display: table;
 }

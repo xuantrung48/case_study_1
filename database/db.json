@@ -4,7 +4,7 @@
       "id": 1,
       "Name": "iPhone 6 Plus 32GB Gold",
       "Images": [
-        "https://img.sosanhgia.com/images/500x0/267c98666a184a9b8f8d7fc9916038b4/iphone-6s-plus-32gb.jpeg",
+        "https://cdn.tgdd.vn/Products/Images/42/87846/iphone-6s-plus-32gb-400-460-400x460-400x460-400x460.png",
         "https://s4.nhattao.com/data/attachment-files/2019/12/14104342_75220802_2541397122760399_7044981031098646528_o.jpg",
         "https://s4.nhattao.com/data/attachment-files/2018/07/10764095_ip-6-s.jpg"
       ],
@@ -26,7 +26,7 @@
       "id": 2,
       "Name": "VSmart Live 6GB/64GB Trắng",
       "Images": [
-        "https://cdn.tgdd.vn/Products/Images/42/209553/vsmart-live-6gb-white-600x600.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/209553/vsmart-live-6gb-white-400x460.png",
         "https://image.thanhnien.vn/660/uploaded/baont/2019_08_08/vsmartlivelifestyle19_vcql.jpg",
         "https://vn-test-11.slatic.net/p/6954afe1a01692df9933c3b96b72d1b8.jpg_720x720q80.jpg_.webp"
       ],
@@ -48,7 +48,7 @@
       "id": 3,
       "Name": "OPPO A91",
       "Images": [
-        "https://cdn.tgdd.vn/2020/03/campaign/p-412x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/217287/oppo-a91-trang-460x400-400x460.png",
         "https://www.gizmochina.com/wp-content/uploads/2019/12/Oppo-A91.jpg",
         "https://cdn.tgdd.vn/Files/2020/03/05/1240233/oppoa91_800x450.png"
       ],
@@ -241,6 +241,28 @@
       "FrontCamera": "7 MP",
       "Ram": "3",
       "Rom": "64"
+    },
+    {
+      "Name": "Samsung Galaxy Note 10+",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-blue-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-tgdd-26.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-tgdd-10.jpg"
+      ],
+      "Brand": {
+        "id": "2",
+        "Name": "Samsung"
+      },
+      "Status": "88",
+      "Price": "19900000",
+      "CPU": "Exynos 9825 8 nhân",
+      "Screen": "Dynamic AMOLED, 6.8\", Quad HD+ (2K+)",
+      "OS": "Android 9.0 (Pie)",
+      "RearCamera": "12 MP & 12 MP, 16 MP, TOF 3D",
+      "FrontCamera": "10 MP",
+      "Ram": "12",
+      "Rom": "256",
+      "id": 12
     }
   ],
   "Brands": [
