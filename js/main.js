@@ -15,7 +15,7 @@ digitGrouping = function(number) {
 
 productsList = function() {
 	$.ajax({
-		url: "http://localhost:3000/Devices",
+		url: "https://secondbestdb.herokuapp.com/Devices",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
@@ -68,7 +68,7 @@ $("#brandSearch").click(function() {
 
 initBrand = function() {
 	$.ajax({
-		url: "http://localhost:3000/Brands",
+		url: "https://secondbestdb.herokuapp.com/Brands",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
@@ -85,7 +85,7 @@ searchProduct = function() {
 	let keyword = $("#enterSearch").val().toLowerCase();
 
 	$.ajax({
-		url: "http://localhost:3000/Devices",
+		url: "https://secondbestdb.herokuapp.com/Devices",
 		method: "GET",
 		datatype: "json",
 		success: function(data){

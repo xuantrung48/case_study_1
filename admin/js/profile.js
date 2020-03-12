@@ -4,7 +4,7 @@ $(function() {
 
 getAdminID = function() {
 	$.ajax({
-		url: "http://localhost:3000/AdminID/1",
+		url: "https://secondbestdb.herokuapp.com/AdminID/1",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
@@ -20,7 +20,7 @@ adminIdSave = function() {
 		adminObj.Email		= $("#email").val();
 		adminObj.Password	= $("#password").val();
 		$.ajax({
-			url: "http://localhost:3000/AdminID/1",
+			url: "https://secondbestdb.herokuapp.com/AdminID/1",
 			method: "PUT",
 			dataType: "json",
 			contentType: "application/json",

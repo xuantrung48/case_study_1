@@ -15,7 +15,7 @@ device.init = function() {
 
 device.initBrand = function() {
 	$.ajax({
-		url: "http://localhost:3000/Brands",
+		url: "https://secondbestdb.herokuapp.com/Brands",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
@@ -54,7 +54,7 @@ device.save = function() {
 			deviceObj.Ram			= $("#Ram").val();
 			deviceObj.Rom			= $("#Rom").val();
 			$.ajax({
-				url: "http://localhost:3000/Devices",
+				url: "https://secondbestdb.herokuapp.com/Devices",
 				method: "POST",
 				dataType: "json",
 				contentType: "application/json",
@@ -90,7 +90,7 @@ device.save = function() {
 			deviceObj.Ram			= $("#Ram").val();
 			deviceObj.Rom			= $("#Rom").val();
 			$.ajax({
-				url: "http://localhost:3000/Devices/" + deviceObj.id,
+				url: "https://secondbestdb.herokuapp.com/Devices/" + deviceObj.id,
 				method: "PUT",
 				dataType: "json",
 				contentType: "application/json",
@@ -139,7 +139,7 @@ device.reset = function() {
 
 device.drawTable = function() {
 	$.ajax({
-		url: "http://localhost:3000/Devices",
+		url: "https://secondbestdb.herokuapp.com/Devices",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
@@ -160,7 +160,7 @@ device.drawTable = function() {
 
 device.get = function(id) {
 	$.ajax({
-		url: "http://localhost:3000/Devices/" + id,
+		url: "https://secondbestdb.herokuapp.com/Devices/" + id,
 		method: "GET",
 		dataType: "json",
 		success: function(data) {
@@ -203,7 +203,7 @@ device.remove = function(id) {
 		callback: function (result) {
 			if (result) {
 				$.ajax({
-					url: "http://localhost:3000/Devices/" + id,
+					url: "https://secondbestdb.herokuapp.com/Devices/" + id,
 					method: "DELETE",
 					dataType: "json",
 					success: function(data) {

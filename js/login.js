@@ -22,7 +22,7 @@ var passwd;
 
 function login() {
 	$.ajax({
-		url: "http://localhost:3000/AdminID/1",
+		url: "https://secondbestdb.herokuapp.com/1",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
