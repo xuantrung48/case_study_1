@@ -66,6 +66,10 @@ $("#brandSearch").click(function() {
 	searchProduct();
 })
 
+$("#pricesort").click(function() {
+	searchProduct();
+})
+
 initBrand = function() {
 	$.ajax({
 		url: "https://secondbestdb.herokuapp.com/Brands",
@@ -91,12 +95,26 @@ searchProduct = function() {
 		success: function(data){
 			$("#Products").empty();
 			$("#carouselExampleIndicators").empty();
+
+			if ($("#pricesort").val() == "Ascending") {
+				data.sort(function(a, b) {
+					return parseFloat(a.Price) - parseFloat(b.Price);
+				});
+			}
 			
+			if ($("#pricesort").val() == "Descending") {
+				data.sort(function(a, b) {
+					return parseFloat(b.Price) - parseFloat(a.Price);
+				});
+			}
+
 			$.each(data, function(i, v){
 				let deviceName		= v.Name.toLowerCase();
 				let deviceBrand		= v.Brand.Name.toLowerCase();
 				let deviceCPU		= v.CPU.toLowerCase();
 				let deviceOS		= v.OS.toLowerCase();
+
+
 				if ((deviceName.includes(keyword) || deviceBrand.includes(keyword) || deviceCPU.includes(keyword) || deviceOS.includes(keyword)) && (v.Price > $("#slider-range").slider("values", 0) && v.Price <  $("#slider-range").slider("values", 1)) && $("#brandSearch").val() == "All") {
 					let imagesDevice = '<div class="row mx-auto">';
 					for (let i = 1; i < v.Images.length; i++) {
