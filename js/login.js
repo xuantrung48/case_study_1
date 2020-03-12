@@ -22,7 +22,7 @@ var passwd;
 
 function login() {
 	$.ajax({
-		url: "https://secondbestdb.herokuapp.com/1",
+		url: "https://secondbestdb.herokuapp.com/AdminID/1",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
