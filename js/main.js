@@ -264,6 +264,12 @@ orderCart = function() {
 						method: "DELETE",
 						dataType: "json"
 					});
+					
+					$.ajax({
+						url: "https://secondbestdb.herokuapp.com/Devices/" + v.id,
+						method: "DELETE",
+						dataType: "json"
+					});
 				});
 			}
 		});
