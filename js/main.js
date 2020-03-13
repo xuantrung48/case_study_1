@@ -42,10 +42,10 @@ createRangeSlider = function() {
 		max: 20000000,
 		values: [0, 20000000],
 		slide: function( event, ui ) {
-			$("#amount").val("₫" + ui.values[0] + " - ₫" + ui.values[1]);
+			$("#amount").val(digitGrouping(ui.values[0]) + " ₫" + " - " + digitGrouping(ui.values[1]) + " ₫");
 		}
 	});
-	$("#amount").val("₫" + $("#slider-range").slider("values", 0) + " - ₫" + $("#slider-range").slider("values", 1));	
+	$("#amount").val(digitGrouping($("#slider-range").slider("values", 0)) + " ₫" + " - " + digitGrouping($("#slider-range").slider("values", 1)) + " ₫");	
 }
 
 $("#enterSearch").on('keypress',function(e) {
@@ -54,10 +54,8 @@ $("#enterSearch").on('keypress',function(e) {
     }
 });
 
-$(function() {
-	$("#clickSearch").click(function() {
-		searchProduct();
-	})
+$("#clickSearch").click(function() {
+	searchProduct();
 })
 
 $("#slider-range").click(function() {
