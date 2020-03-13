@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>Devices Management</title>
+		<title>Orders management</title>
 		<link rel="icon" href="../images/smartphone-icon.png">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
@@ -41,28 +41,33 @@
 					</div>
 				</nav>
 				<div class="container-fluid">
-					<h1>Devices Management</h1>
-					<a href="javascript:void(0);" class="btn btn-primary mb-3" onclick="device.openModal()"><i class="fa fa-plus"></i> Add Device</a>
-					<table class="table table-hover table-responsive table-bordered display" id="devicesManagement">
+					<h1>Orders Management</h1>
+					<div>
+						<label>Orders' Status:
+							<select id="OrderStatusFilter">
+								<option>Pending</option>
+								<option>Processing</option>
+								<option>Completed</option>
+							</select>
+						</label>
+					</div>
+					<table class="table table-hover table-responsive table-bordered display" id="ordersManagement">
 						<thead>
 							<tr class="thead-dark">
 								<th>ID</th>
+								<th>Order Status</th>
+								<th>Customer's Name</th>
+								<th>Customer's Phone Number</th>
+								<th>Customer's Address</th>
 								<th>Device's Name</th>
 								<th>Images</th>
 								<th>Brand</th>
-								<th>CPU</th>
-								<th>Screen</th>
-								<th>OS</th>
-								<th>Rear Camera</th>
-								<th>Front Camera</th>
-								<th>Ram</th>
-								<th>Rom</th>
 								<th>Status</th>
 								<th>Price</th>
 								<th>Action</th>
 							</tr>
 						</thead>
-						<tbody id="tbDevices">
+						<tbody id="tbCustomers">
 						</tbody>
 					</table>
 				</div>
@@ -76,12 +81,34 @@
 			<!-- Modal content-->
 				<div class="modal-content">
 					<div class="modal-header">
-						<h4 class="modal-title" id="deviceModalTitle">Device details:</h4>
+						<h4 class="modal-title" id="deviceModalTitle">Order details:</h4>
 						<button type="button" class="close" data-dismiss="modal">&times;</button>
 					</div>
 					<div class="modal-body">
-						<form id="formAddEditDevice">
+						<form id="formAddEditOrder">
 							<input hidden name="id" id="id" value="0">
+							<div class="row form-group">
+								<div class="col-3">Orders' Status:</div>
+								<div class="col-9">
+									<select id="OrderStatus" class="form-control" name="OrderStatus" data-rule-required="true">
+										<option>Pending</option>
+										<option>Processing</option>
+										<option>Completed</option>
+									</select>
+								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Customer's Name:</div>
+								<div class="col-9"><input type="text" id="CustomerName" class="form-control" name="CustomerName" data-rule-required="true"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Customer's Phone Number:</div>
+								<div class="col-9"><input type="text" id="PhoneNumber" class="form-control" name="PhoneNumber" data-rule-required="true"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-3">Customer's Address:</div>
+								<div class="col-9"><input type="text" id="Address" class="form-control" name="Address" data-rule-required="true"></div>
+							</div>
 							<div class="row form-group">
 								<div class="col-3">Device's Name:</div>
 								<div class="col-9"><input type="text" id="Name" class="form-control" name="Name" data-rule-required="true"></div>
@@ -136,7 +163,7 @@
 						</form>
 					</div>
 					<div class="modal-footer">
-						<a href="javascript:void(0);" class="btn btn-primary" onclick="device.save()" id="addButton">Add</a>
+						<a href="javascript:void(0);" class="btn btn-primary" onclick="saveOrder()">Save</a>
 						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
 					</div>
 				</div>
@@ -149,7 +176,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
 		<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-		<script src="js/device.js"></script>
+		<script src="js/orders.js"></script>
 		<script>
 			$("#menu-toggle").click(function(e) {
 				e.preventDefault();

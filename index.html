@@ -121,14 +121,48 @@
 			</div>
 			<!-- /.container -->
 		</footer>
-
+		
+		<!-- Order Modal -->
+		<div id="OrderModal" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-dialog">
+			<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title">Please fill your details:</h4>
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form id="OrderForm">
+							<input hidden name="id" id="id" value="0">
+							<div class="row form-group">
+								<div class="col-5">Your Name:</div>
+								<div class="col-7"><input type="text" id="Name" class="form-control" name="Name" data-rule-required="true"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-5">Your Phone Number:</div>
+								<div class="col-7"><input type="text" id="PhoneNumber" class="form-control" data-rule-required="true" data-rule-number="true"></div>
+							</div>
+							<div class="row form-group">
+								<div class="col-5">Your Address:</div>
+								<div class="col-7"><input type="text" id="Address" class="form-control" data-rule-required="true"></div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<a href="javascript:void(0);" class="btn btn-primary" onclick="order.save()">Order Now</a>
+						<button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+					</div>
+				</div>
+			</div>
+		</div>
 		<!-- Bootstrap core JavaScript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
-
 </html>

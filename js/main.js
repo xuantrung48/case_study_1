@@ -26,7 +26,7 @@ productsList = function() {
 				}
 				imagesDevice += '</div>';
 				$("#Products").append(
-					'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br>' + 'Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
+					'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" onclick="buyDevice(' + v.id + ')"><span class="btn btn-primary">BUY NOW!</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
 				);
 			})
 		}
@@ -122,7 +122,7 @@ searchProduct = function() {
 					}
 					imagesDevice += '</div>';
 					$("#Products").append(
-						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br>' + 'Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
+						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center onclick="buyDevice(' + v.id + ')"><span class="btn btn-primary">BUY NOW!</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
 					);
 				}
 				
@@ -133,11 +133,94 @@ searchProduct = function() {
 					}
 					imagesDevice += '</div>';
 					$("#Products").append(
-						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br>' + 'Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
+						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center onclick="buyDevice(' + v.id + ')"><span class="btn btn-primary">BUY NOW!</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
 					);
 				}
 			})
 			
 		}
 	});
+}
+
+var order = {} || order;
+
+order.save = function() {
+	if($("#OrderForm").valid()) {
+		var orderObj					= {};
+		orderObj.Name					= $("#Name").val();
+		orderObj.PhoneNumber			= $("#PhoneNumber").val();
+		orderObj.Address				= $("#Address").val();
+		orderObj.OrderStatus			= "Pending";
+		orderObj.BuyDevice				= {};
+		orderObj.BuyDevice.ID			= deviceID;
+		orderObj.BuyDevice.Name			= deviceName;
+		orderObj.BuyDevice.Images		= deviceImages;
+		orderObj.BuyDevice.Brand		= deviceBrand;
+		orderObj.BuyDevice.Status		= deviceStatus;
+		orderObj.BuyDevice.Price		= devicePrice;
+		orderObj.BuyDevice.CPU			= deviceCPU;
+		orderObj.BuyDevice.Screen		= deviceScreen;
+		orderObj.BuyDevice.OS			= deviceOS;
+		orderObj.BuyDevice.RearCamera	= deviceRearCamera;
+		orderObj.BuyDevice.FrontCamera	= deviceFrontCamera;
+		orderObj.BuyDevice.Ram			= deviceRam;
+		orderObj.BuyDevice.Rom			= deviceRom;
+		$.ajax({
+			url: "https://secondbestdb.herokuapp.com/Orders",
+			method: "POST",
+			dataType: "json",
+			contentType: "application/json",
+			data: JSON.stringify(orderObj),
+			success: function(data) {
+				$('#OrderModal').modal('hide');
+				bootbox.alert("Thank you for your order! We will be processing and shipping your order ASAP.");
+				$("#Products").empty();
+				productsList();
+				$.ajax({
+					url: "https://secondbestdb.herokuapp.com/Devices/" + deviceID,
+					method: "DELETE",
+					dataType: "json"
+				});
+			}
+		});
+	}
+}
+
+var deviceID, deviceName, deviceImages, deviceBrand, deviceStatus, devicePrice, deviceCPU, deviceRam, deviceRom, deviceScreen, deviceOS, deviceRearCamera, deviceFrontCamera;
+buyDevice = function(device) {
+	resetOrderModal();
+	$('#OrderModal').modal('show');
+	$.ajax({
+		url: "https://secondbestdb.herokuapp.com/Devices",
+		method: "GET",
+		datatype: "json",
+		success: function(data){
+			$.each(data, function(i, v){
+				if (device == v.id) {
+					deviceID			= v.id;
+					deviceName			= v.Name;
+					deviceImages		= v.Images;
+					deviceBrand			= v.Brand;
+					deviceStatus		= v.Status;
+					devicePrice			= v.Price;
+					deviceCPU			= v.CPU;
+					deviceRam			= v.Ram;
+					deviceRom			= v.Rom;
+					deviceScreen		= v.Screen;
+					deviceOS			= v.OS;
+					deviceRearCamera	= v.RearCamera;
+					deviceFrontCamera	= v.FrontCamera;
+				}
+			});
+		}
+	});
+}
+
+resetOrderModal = function() {
+	$("#id").val('0');
+	$("#Name").val('');
+	$("#PhoneNumber").val('');
+	$("#Address").val('');
+	var validator = $("#OrderForm").validate();
+	validator.resetForm();
 }
