@@ -28,7 +28,7 @@ productsList = function() {
 				}
 				imagesDevice += '</div>';
 				$("#Products").append(
-					'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" onclick="buyDevice(' + v.id + ')"><span class="btn btn-primary">BUY NOW!</span></div><br><div class="text-center" onclick="addToCart(' + v.id + ')"><span class="btn btn-warning">Add to cart</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
+					'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="row"><a href="javascript:void(0);" class="btn btn-primary btn-block" onclick="buyDevice(' + v.id + ')">BUY NOW!</a><a href="javascript:void(0);" class="btn btn-warning btn-block" onclick="addToCart(' + v.id + ')">Add to Cart <i class="fa fa-cart-plus"></i></a></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
 				);
 			})
 		}
@@ -285,11 +285,12 @@ checkCart = function() {
 		method: "GET",
 		datatype: "json",
 		success: function(data){
-			$("#cart").html('Your cart (' + data.length + ')');
+			$("#cart").html('<i class="fa fa-cart-plus"></i> (' + data.length + ')');
 			if (data.length == 0) {
-				$("#cartHeading").text("Cart empty");
+				$("#cartHeading").text("Your Cart is empty");
+				$("#checkOut").empty();
 			} else {
-				$("#cartHeading").text("Your cart (" + data.length + "):");
+				$("#cartHeading").text('You have ' + data.length + ' items in your cart:');
 				$("#checkOut").html('<div class="text-center" onclick="checkOut()"><span class="btn btn-primary">Check Out</span></div>');
 			}
 		}
