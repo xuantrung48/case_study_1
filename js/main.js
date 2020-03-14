@@ -107,7 +107,7 @@ searchProduct = function() {
 				let deviceOS		= v.OS.toLowerCase();
 
 
-				if ((deviceName.includes(keyword) || deviceBrand.includes(keyword) || deviceCPU.includes(keyword) || deviceOS.includes(keyword)) && (v.Price > $("#slider-range").slider("values", 0) && v.Price <  $("#slider-range").slider("values", 1)) && $("#brandSearch").val() == "All") {
+				if ((deviceName.includes(keyword) || deviceBrand.includes(keyword) || deviceCPU.includes(keyword) || deviceOS.includes(keyword)) && (v.Price >= $("#slider-range").slider("values", 0) && v.Price <=  $("#slider-range").slider("values", 1)) && $("#brandSearch").val() == "All") {
 					let imagesDevice = '<div class="row mx-auto">';
 					for (let i = 1; i < v.Images.length; i++) {
 						imagesDevice += '<a href="' + v.Images[i] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img src="' + v.Images[i] + '" height="50"></a>&nbsp;';
@@ -118,7 +118,7 @@ searchProduct = function() {
 					);
 				}
 				
-				if ((deviceName.includes(keyword) || deviceBrand.includes(keyword) || deviceCPU.includes(keyword) || deviceOS.includes(keyword)) && (v.Price > $("#slider-range").slider("values", 0) && v.Price <  $("#slider-range").slider("values", 1)) && v.Brand.id == $("#brandSearch").val()) {
+				if ((deviceName.includes(keyword) || deviceBrand.includes(keyword) || deviceCPU.includes(keyword) || deviceOS.includes(keyword)) && (v.Price >= $("#slider-range").slider("values", 0) && v.Price <=  $("#slider-range").slider("values", 1)) && v.Brand.id == $("#brandSearch").val()) {
 					let imagesDevice = '<div class="row mx-auto">';
 					for (let i = 1; i < v.Images.length; i++) {
 						imagesDevice += '<a href="' + v.Images[i] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img src="' + v.Images[i] + '" height="50"></a>&nbsp;';
