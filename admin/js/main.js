@@ -4,6 +4,11 @@ digitGrouping = function(price) {
 	return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
 
+$("#menu-toggle").click(function(e) {
+	e.preventDefault();
+	$("#wrapper").toggleClass("toggled");
+});
+
 device.init = function() {
 	device.drawTable();
 	device.initBrand();
@@ -167,7 +172,7 @@ device.get = function(id) {
 			$("#Images0").val(data.Images[0]);
 			$("#Images1").val(data.Images[1]);
 			$("#Images2").val(data.Images[2]);
-			$("#Brand").val(id);
+			$("#Brand").val(data.Brand.id);
 			$("#Status").val(data.Status);
 			$("#Price").val(data.Price);
 			$("#CPU").val(data.CPU);
