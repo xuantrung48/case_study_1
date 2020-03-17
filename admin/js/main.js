@@ -211,6 +211,14 @@ device.remove = function(id) {
 						device.drawTable();
 					}
 				});
+				$.ajax({
+					url: "https://secondbestdb.herokuapp.com/Cart/" + id,
+					method: "DELETE",
+					dataType: "json",
+					success: function(data) {
+						device.drawTable();
+					}
+				});
 				bootbox.alert("Device removed!");
 			}
 		}

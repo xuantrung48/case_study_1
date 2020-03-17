@@ -59,3 +59,8 @@ button {
 .error {
 	color: red;
 }
+
+.buyBtn {
+	width: 45% !important;
+	font-size: 0.9em;
+}
