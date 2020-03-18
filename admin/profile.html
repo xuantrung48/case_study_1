@@ -43,20 +43,29 @@
 					<h1>Admin ID</h1>
 					<form id="formAdmin">
 						<div class="row form-group">
-							<div class="col-1">Email:</div>
+							<div class="col-2">Email:</div>
 							<div class="col-3">
-								<input type="text" id="email" class="form-control" name="email" 
-								data-rule-required="true"
-								data-rule-email="true">
+								<input type="text" id="email" class="form-control" name="email"
+									   data-rule-required="true"
+									   data-rule-email="true">
 							</div>
 						</div>
-						<div id="wrongEmail"></div>
+						<div id="wrongID" style="color:red"></div>
 						<div class="row form-group">
-							<div class="col-1">Password:</div>
-							<div class="col-3"><input type="password" id="password" class="form-control" name="password" data-rule-required="true"></div>
+							<div class="col-2">Old Password:</div>
+							<div class="col-3"><input type="password" id="oldpassword" class="form-control" name="oldpassword"></div>
 						</div>
 						<div class="row form-group">
-							<div class="col-1"></div>
+							<div class="col-2">New Password:</div>
+							<div class="col-3"><input type="password" id="newpassword" class="form-control" name="newpassword"></div>
+						</div>
+						<div class="row form-group">
+							<div class="col-2">Confirm Password:</div>
+							<div class="col-3"><input type="password" id="confirmpassword" class="form-control" name="confirmpassword"></div>
+						</div>
+						<div id="wrongpw" style="color:red"></div>
+						<div class="row form-group">
+							<div class="col-2"></div>
 							<div class="col-1"><a href="javascript:void(0);" class="btn btn-primary" onclick="adminIdSave()">Save</a></div>
 							<div class="col-1"><a href="index.html" class="btn btn-secondary">Cancel</a></div>
 						</div>
@@ -74,7 +83,7 @@
 		<script src="js/main.js"></script>
 		<script>
 			$(function() {
-				getAdminID();
+                getAdminID();
 			});
 		</script>
 	</body>

@@ -211,14 +211,6 @@ device.remove = function(id) {
 						device.drawTable();
 					}
 				});
-				$.ajax({
-					url: "https://secondbestdb.herokuapp.com/Cart/" + id,
-					method: "DELETE",
-					dataType: "json",
-					success: function(data) {
-						device.drawTable();
-					}
-				});
 				bootbox.alert("Device removed!");
 			}
 		}
@@ -396,21 +388,56 @@ getAdminID = function() {
 	})
 }
 
-adminIdSave = function() {
-	if($('#formAdmin').valid()){
-		var adminObj		= {};
-		adminObj.id			= 1;
-		adminObj.Email		= $("#email").val();
-		adminObj.Password	= $("#password").val();
+adminIdSave = function () {
+	if ($('#formAdmin').valid()) {
+		let newEmail = $("#email").val();
+
 		$.ajax({
 			url: "https://secondbestdb.herokuapp.com/AdminID/1",
-			method: "PUT",
-			dataType: "json",
-			contentType: "application/json",
-			data: JSON.stringify(adminObj),
-			success: function(data) {
-				bootbox.alert("Profile updated!");
+			method: "GET",
+			datatype: "json",
+			success: function (data) {
+
+				if (data.Password == $("#oldpassword").val()) {
+					if ($("#newpassword").val() != $("#confirmpassword").val()) {
+						$("#wrongpw").text("Password does not match!");
+					} else {
+						if ($("#newpassword").val() != "") {
+							var adminObj		= {};
+							adminObj.id			= 1;
+							adminObj.Email		= $("#email").val();
+							adminObj.Password	= $("#newpassword").val();
+							$.ajax({
+								url: "https://secondbestdb.herokuapp.com/AdminID/1",
+								method: "PUT",
+								dataType: "json",
+								contentType: "application/json",
+								data: JSON.stringify(adminObj),
+								success: function(data) {
+									bootbox.alert("Profile updated!");
+								}
+							});
+						} else {
+							var adminObj		= {};
+							adminObj.id			= 1;
+							adminObj.Email		= $("#email").val();
+							adminObj.Password	= data.Password;
+							$.ajax({
+								url: "https://secondbestdb.herokuapp.com/AdminID/1",
+								method: "PUT",
+								dataType: "json",
+								contentType: "application/json",
+								data: JSON.stringify(adminObj),
+								success: function(data) {
+									bootbox.alert("Profile updated!");
+								}
+							});
+						}
+					}
+				} else {
+					$("#wrongID").text("Wrong Password!");
+				}
 			}
-		});
+		})
 	}
 }

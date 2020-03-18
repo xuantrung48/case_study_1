@@ -431,19 +431,13 @@ $(function() {
 	})
 })
 
-
-var email;
-var passwd;
-
 login = function() {
 	$.ajax({
 		url: "https://secondbestdb.herokuapp.com/AdminID/1",
 		method: "GET",
 		datatype: "json",
 		success: function(data){
-			email	= data.Email;
-			passwd	= data.Password;
-			if ($("#email").val() == email && $("#password").val() == passwd) {
+			if ($("#email").val() == data.Email && $("#password").val() == data.Password) {
 				$(location).attr('href', 'admin/index.html');
 			} else {
 				$("#wrong").html('<div class="alert alert-danger">Wrong Email or Password!</div>');
