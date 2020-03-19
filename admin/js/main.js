@@ -235,7 +235,7 @@ ordersdrawTable = function(OrderStatus) {
 						imagesDevice += "<a href='" + v.BuyDevice.Images[i] + "'data-toggle='lightbox' data-gallery='gallery" + v.BuyDevice.id + "' data-title='" + v.BuyDevice.Name + "'><img src='" + v.BuyDevice.Images[i] + "' height='50'></a> ";
 					}
 					$("#tbCustomers").append(
-						"<tr><td>" + v.id + "</td><td>" + v.OrderStatus + "</td><td>" + v.Name + "</td><td>" + v.PhoneNumber + "</td><td>" + v.Address + "</td><td>" + v.BuyDevice.Name + "</td><td>" + imagesDevice + "</td><td>" + v.BuyDevice.Brand.Name + "</td><td>" + v.BuyDevice.Status + " %</td><td>" + digitGrouping(v.BuyDevice.Price) + " ₫</td><td><a href='javascript:void(0);' onclick='getOrder(" + v.id + ")'><i class='fa fa-edit' title='Edit this order'></i></a> <a href='javascript:void(0);' onclick='removeOrder(" + v.id + ")'><i class='fa fa-trash' title='Remove this order'></i></a></td></tr>"
+						"<tr><td>" + v.id + "</td><td>" + v.OrderStatus + "</td><td>" + v.Name + "</td><td>" + v.PhoneNumber + "</td><td>" + v.Address + "</td><td>" + v.BuyDevice.Name + "</td><td>" + imagesDevice + "</td><td>" + v.BuyDevice.Status + " %</td><td>" + digitGrouping(v.BuyDevice.Price) + " ₫</td><td><a href='javascript:void(0);' onclick='getOrder(" + v.id + ")'><i class='fa fa-edit' title='Edit this order'></i></a> <a href='javascript:void(0);' onclick='removeOrder(" + v.id + ")'><i class='fa fa-trash' title='Remove this order'></i></a></td></tr>"
 					);
 				}
 			});

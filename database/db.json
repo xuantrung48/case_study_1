@@ -1,0 +1,322 @@
+{
+  "Devices": [
+    {
+      "id": 1,
+      "Name": "iPhone 6 Plus 32GB Gold",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/87846/iphone-6s-plus-32gb-400-460-400x460-400x460-400x460.png",
+        "https://s4.nhattao.com/data/attachment-files/2019/12/14104342_75220802_2541397122760399_7044981031098646528_o.jpg",
+        "https://s4.nhattao.com/data/attachment-files/2018/07/10764095_ip-6-s.jpg"
+      ],
+      "Brand": {
+        "id": "1",
+        "Name": "Apple"
+      },
+      "Status": "95",
+      "Price": "3000000",
+      "CPU": "Apple A9 2 nhân",
+      "Screen": "LED-backlit IPS LCD, 5.5\", Retina HD",
+      "OS": "iOS 12",
+      "RearCamera": "12 MP",
+      "FrontCamera": "5 MP",
+      "Ram": "2",
+      "Rom": "32"
+    },
+    {
+      "id": 3,
+      "Name": "OPPO A91",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/217287/oppo-a91-trang-460x400-400x460.png",
+        "https://www.gizmochina.com/wp-content/uploads/2019/12/Oppo-A91.jpg",
+        "https://cdn.tgdd.vn/Files/2020/03/05/1240233/oppoa91_800x450.png"
+      ],
+      "Brand": {
+        "id": "4",
+        "Name": "Oppo"
+      },
+      "Status": "99",
+      "Price": "5000000",
+      "CPU": "MediaTek Helio P70 8 nhân",
+      "Screen": "AMOLED, 6.4\", Full HD+",
+      "OS": "ColorOS 6.1 (Android 9.0)",
+      "RearCamera": "48 MP & 8 MP, 2 MP, 2 MP",
+      "FrontCamera": "16 MP",
+      "Ram": "8",
+      "Rom": "128"
+    },
+    {
+      "Name": "Xiaomi Redmi Note 8 (4GB/64GB)",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/209535/xiaomi-redmi-note-8-white-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/209535/xiaomi-redmi-note-8-64gb-8.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/209535/xiaomi-redmi-note-8-64gb-9.jpg"
+      ],
+      "Brand": {
+        "id": "5",
+        "Name": "Xiaomi"
+      },
+      "Status": "97",
+      "Price": "3900000",
+      "CPU": "Snapdragon 665 8 nhân",
+      "Screen": "IPS LCD, 6.3\", Full HD+",
+      "OS": "Android 9.0 (Pie)",
+      "RearCamera": "48 MP & 8 MP, 2 MP, 2 MP",
+      "FrontCamera": "13 MP",
+      "Ram": "4",
+      "Rom": "64",
+      "id": 4
+    },
+    {
+      "Name": "Realme C3",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/218361/realme-c3-do-400x460-1-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/218361/realme-c3-tgdd4.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/218361/realme-c3-tgdd7.jpg"
+      ],
+      "Brand": {
+        "id": "9",
+        "Name": "Others"
+      },
+      "Status": "80",
+      "Price": "1700000",
+      "CPU": "MediaTek Helio G70 8 nhân",
+      "Screen": "IPS LCD, 6.5\", HD+",
+      "OS": "Android 10",
+      "RearCamera": "12 MP & 2 MP, 2 MP",
+      "FrontCamera": "5 MP",
+      "Ram": "3",
+      "Rom": "32",
+      "id": 5
+    },
+    {
+      "Name": "OPPO Reno2",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/209798/oppo-reno-2-pink-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/209798/oppo-reno2-tgdd11.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/209798/oppo-reno2-tgdd6.jpg"
+      ],
+      "Brand": {
+        "id": "4",
+        "Name": "Oppo"
+      },
+      "Status": "89",
+      "Price": "6700000",
+      "CPU": "Snapdragon 730G 8 nhân",
+      "Screen": "Sunlight AMOLED, 6.55\", Full HD+",
+      "OS": "Android 9.0 (Pie)",
+      "RearCamera": "48 MP & 13 MP, 8 MP, 2 MP",
+      "FrontCamera": "16 MP",
+      "Ram": "8",
+      "Rom": "256",
+      "id": 6
+    },
+    {
+      "Name": "Vivo V17 Pro",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/210243/vivo-v17-pro-blue-noo-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/210243/vivo-v17-pro-tgdd8.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/210243/vivo-v17-pro-tgdd10.jpg"
+      ],
+      "Brand": {
+        "id": "9",
+        "Name": "Others"
+      },
+      "Status": "95",
+      "Price": "6500000",
+      "CPU": "Snapdragon 675 8 nhân",
+      "Screen": "Super AMOLED, 6.44\", Full HD+",
+      "OS": "Android 9.0 (Pie)",
+      "RearCamera": "48 MP & 8 MP, 2 MP, 2 MP",
+      "FrontCamera": "32 MP & 8 MP",
+      "Ram": "8",
+      "Rom": "128",
+      "id": 7
+    },
+    {
+      "Name": "Nokia 7.2",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/207650/nokia-72-black-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/207650/nokia-72-den-tgdd-4.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/207650/nokia-72-tgdd-6.jpg"
+      ],
+      "Brand": {
+        "id": "9",
+        "Name": "Others"
+      },
+      "Status": "96",
+      "Price": "3500000",
+      "CPU": "Snapdragon 660 8 nhân",
+      "Screen": "IPS LCD, 6.3\", Full HD+",
+      "OS": "Android 9 Pie (Android One)",
+      "RearCamera": "48 MP & 8 MP, 5 MP",
+      "FrontCamera": "20 MP",
+      "Ram": "4",
+      "Rom": "64",
+      "id": 8
+    },
+    {
+      "Name": "Huawei Nova 5T",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/209795/huawei-nova-5t-400x460-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/209795/huawei-nova-5t-tgdd7.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/209795/huawei-nova-5t-tgdd8.jpg"
+      ],
+      "Brand": {
+        "id": "6",
+        "Name": "Huawei"
+      },
+      "Status": "96",
+      "Price": "7600000",
+      "CPU": "Kirin 980 8 nhân",
+      "Screen": "IPS LCD, 6.26\", Full HD+",
+      "OS": "Android 9.0 (Pie)",
+      "RearCamera": "48 MP & 16 MP, 2 MP, 2 MP",
+      "FrontCamera": "32 MP",
+      "Ram": "8",
+      "Rom": "128",
+      "id": 9
+    },
+    {
+      "Name": "Samsung Galaxy A70",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/195012/samsung-galaxy-a70-white-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/195012/samsung-galaxy-a70-tgdd-6.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/195012/samsung-galaxy-a70-tgdd-7.jpg"
+      ],
+      "Brand": {
+        "id": "2",
+        "Name": "Samsung"
+      },
+      "Status": "100",
+      "Price": "8490000",
+      "CPU": "Snapdragon 675 8 nhân",
+      "Screen": "Super AMOLED, 6.7\", Full HD+",
+      "OS": "Android 9.0 (Pie)",
+      "RearCamera": "32 MP & 8 MP, 5 MP",
+      "FrontCamera": "32 MP",
+      "Ram": "6",
+      "Rom": "128",
+      "id": 10
+    },
+    {
+      "id": 11,
+      "Name": "iPhone 8 Plus 64GB",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/114110/iphone-8-plus-1-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/114114/iphone-8-plus-256gb-h1-1.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/114114/iphone-8-plus-256gb-h7-1.jpg"
+      ],
+      "Brand": {
+        "id": "1",
+        "Name": "Apple"
+      },
+      "Status": "97",
+      "Price": "9800000",
+      "CPU": "Apple A11 Bionic 6 nhân",
+      "Screen": "LED-backlit IPS LCD, 5.5\", Retina HD",
+      "OS": "iOS 12",
+      "RearCamera": "12 MP & 12 MP",
+      "FrontCamera": "7 MP",
+      "Ram": "3",
+      "Rom": "64"
+    },
+    {
+      "Name": "Samsung Galaxy Note 10+",
+      "Images": [
+        "https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-blue-400x460.png",
+        "https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-tgdd-26.jpg",
+        "https://cdn.tgdd.vn/Products/Images/42/206176/samsung-galaxy-note-10-plus-tgdd-10.jpg"
+      ],
+      "Brand": {
+        "id": "2",
+        "Name": "Samsung"
+      },
+      "Status": "88",
+      "Price": "19900000",
+      "CPU": "Exynos 9825 8 nhân",
+      "Screen": "Dynamic AMOLED, 6.8\", Quad HD+ (2K+)",
+      "OS": "Android 9.0 (Pie)",
+      "RearCamera": "12 MP & 12 MP, 16 MP, TOF 3D",
+      "FrontCamera": "10 MP",
+      "Ram": "12",
+      "Rom": "256",
+      "id": 12
+    }
+  ],
+  "Brands": [
+    {
+      "id": 1,
+      "Name": "Apple"
+    },
+    {
+      "id": 2,
+      "Name": "Samsung"
+    },
+    {
+      "id": 3,
+      "Name": "Sony"
+    },
+    {
+      "id": 4,
+      "Name": "Oppo"
+    },
+    {
+      "id": 5,
+      "Name": "Xiaomi"
+    },
+    {
+      "id": 6,
+      "Name": "Huawei"
+    },
+    {
+      "id": 7,
+      "Name": "VSmart"
+    },
+    {
+      "id": 8,
+      "Name": "BPhone"
+    },
+    {
+      "id": 9,
+      "Name": "Others"
+    }
+  ],
+  "AdminID": [
+    {
+      "id": 1,
+      "Email": "xuantrung48@gmail.com",
+      "Password": "123456"
+    }
+  ],
+  "Cart": [],
+  "Orders": [
+    {
+      "id": 1,
+      "OrderStatus": "Pending",
+      "Name": "Trung Nguyen",
+      "PhoneNumber": "0702004004",
+      "Address": "2 Ngô Quyền, Huế",
+      "BuyDevice": {
+        "Name": "VSmart Live 6GB/64GB Trắng",
+        "Images": [
+          "https://cdn.tgdd.vn/Products/Images/42/209553/vsmart-live-6gb-white-400x460.png",
+          "https://image.thanhnien.vn/660/uploaded/baont/2019_08_08/vsmartlivelifestyle19_vcql.jpg",
+          "https://vn-test-11.slatic.net/p/6954afe1a01692df9933c3b96b72d1b8.jpg_720x720q80.jpg_.webp"
+        ],
+        "Brand": {
+          "id": "7",
+          "Name": "VSmart"
+        },
+        "Status": "97",
+        "Price": "2500000",
+        "CPU": "Snapdragon 675 8 nhân",
+        "Screen": "AMOLED, 6.2\", Full HD+",
+        "OS": "Android 9.0 (Pie)",
+        "RearCamera": "48 MP & 8 MP, 5 MP",
+        "FrontCamera": "20 MP",
+        "Ram": "6",
+        "Rom": "64"
+      }
+    }
+  ]
+}
