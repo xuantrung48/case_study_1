@@ -217,7 +217,6 @@ checkOut = function() {
 orderCart = function() {
 	if($("#OrderForm").valid()) {
 		let tempCart = JSON.parse(localStorage.getItem('cart'));
-		let deviceSold = [];
 		
 		$.each(tempCart, function(i, v){
 			$.ajax({
@@ -258,9 +257,11 @@ orderCart = function() {
 						method: "DELETE",
 						dataType: "json"
 					});
+					
+					$("#Cart").append("<h3 class='col-12' style='color:red'>You ordered " + v.Name + "! Thank you!</h3><br>");
 				},
 				error: function(){
-					deviceSold.push(v.Name);
+					$("#Cart").append("<h3 class='col-12' style='color:red'>We are sorry! " + v.Name + " has been sold!</h3><br>");
 				},
 			});
 		});
@@ -271,11 +272,6 @@ orderCart = function() {
 		
 		localStorage.setItem('cart', JSON.stringify([]));
 		checkCart();
-		
-		if (deviceSold.length != 0) {
-			$("#Cart").empty();
-			$("#Cart").append("<h3 style='color:red'>We are sorry! " + deviceSold.join(", ") + " have been sold!</h3><br>");
-		}
 	}
 }
 
@@ -385,12 +381,12 @@ removeFromCart = function(id) {
 					if (id == tempCart[i].id) {
 						tempCart.splice(i, 1);
 						localStorage.setItem('cart', JSON.stringify(tempCart));
-						bootbox.alert("Device removed!");
 						checkCart();
 						$("#Cart").empty();
 						cartList();
 					}
 				});
+				bootbox.alert("Device removed!");
 			}
 		}
 	});
