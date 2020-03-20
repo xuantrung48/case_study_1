@@ -216,31 +216,35 @@ checkOut = function() {
 
 orderCart = function() {
 	if($("#OrderForm").valid()) {
-		$.ajax({
-			url: "https://secondbestdb.herokuapp.com/Cart",
-			method: "GET",
-			datatype: "json",
-			success: function(data){
-				$.each(data, function(i, v){
-					var orderObj					= {};
+		let tempCart = JSON.parse(localStorage.getItem('cart'));
+		let deviceSold = [];
+		
+		$.each(tempCart, function(i, v){
+			$.ajax({
+				url: "https://secondbestdb.herokuapp.com/Devices/" + v.id,
+				method: "GET",
+				datatype: "json",
+				success: function(data){
+					let orderObj					= {};
 					orderObj.Name					= $("#Name").val();
 					orderObj.PhoneNumber			= $("#PhoneNumber").val();
 					orderObj.Address				= $("#Address").val();
 					orderObj.OrderStatus			= "Pending";
 					orderObj.BuyDevice				= {};
-					orderObj.BuyDevice.id			= v.id;
-					orderObj.BuyDevice.Name			= v.Name;
-					orderObj.BuyDevice.Images		= v.Images;
-					orderObj.BuyDevice.Brand		= v.Brand;
-					orderObj.BuyDevice.Status		= v.Status;
-					orderObj.BuyDevice.Price		= v.Price;
-					orderObj.BuyDevice.CPU			= v.CPU;
-					orderObj.BuyDevice.Ram			= v.Ram;
-					orderObj.BuyDevice.Rom			= v.Rom;
-					orderObj.BuyDevice.Screen		= v.Screen;
-					orderObj.BuyDevice.OS			= v.OS;
-					orderObj.BuyDevice.RearCamera	= v.RearCamera;
-					orderObj.BuyDevice.FrontCamera	= v.FrontCamera;
+					orderObj.BuyDevice.id			= data.id;
+					orderObj.BuyDevice.Name			= data.Name;
+					orderObj.BuyDevice.Images		= data.Images;
+					orderObj.BuyDevice.Brand		= data.Brand;
+					orderObj.BuyDevice.Status		= data.Status;
+					orderObj.BuyDevice.Price		= data.Price;
+					orderObj.BuyDevice.CPU			= data.CPU;
+					orderObj.BuyDevice.Ram			= data.Ram;
+					orderObj.BuyDevice.Rom			= data.Rom;
+					orderObj.BuyDevice.Screen		= data.Screen;
+					orderObj.BuyDevice.OS			= data.OS;
+					orderObj.BuyDevice.RearCamera	= data.RearCamera;
+					orderObj.BuyDevice.FrontCamera	= data.FrontCamera;
+					
 					$.ajax({
 						url: "https://secondbestdb.herokuapp.com/Orders",
 						method: "POST",
@@ -250,70 +254,77 @@ orderCart = function() {
 					});
 					
 					$.ajax({
-						url: "https://secondbestdb.herokuapp.com/Cart/" + v.id,
-						method: "DELETE",
-						dataType: "json"
-					});
-					
-					$.ajax({
 						url: "https://secondbestdb.herokuapp.com/Devices/" + v.id,
 						method: "DELETE",
 						dataType: "json"
 					});
-				});
-			}
+				},
+				error: function(){
+					deviceSold.push(v.Name);
+				},
+			});
 		});
 		
 		$('#OrderModal').modal('hide');
+		
 		bootbox.alert("Thank you for your order! We will be processing and shipping your order ASAP.");
+		
+		localStorage.setItem('cart', JSON.stringify([]));
+		checkCart();
+		
+		if (deviceSold.length != 0) {
+			$("#Cart").empty();
+			$("#Cart").append("<h3 style='color:red'>We are sorry! " + deviceSold.join(", ") + " have been sold!</h3><br>");
+		}
 	}
 }
 
 checkCart = function() {
 	let total = 0;
-	$.ajax({
-		url: "https://secondbestdb.herokuapp.com/Cart",
-		method: "GET",
-		datatype: "json",
-		success: function(data){
-			if (data.length == 0) {
-				$("#cartHeading").text("Your Cart is empty");
-				$("#checkOut").empty();
-				$("#cart").empty();
-			} else {
-				$("#cart").html('<i class="fa fa-cart-plus"></i> (' + data.length + ')');
-				$("#cartHeading").text('You have ' + data.length + ' items in your cart:');
-				for (let i = 0; i < data.length; i++) {
-					total += +data[i].Price;
-				}
-				$("#checkOut").html('<h4 style="color:red">Total: ' + digitGrouping(total) + ' ₫</h4><div class="text-center" onclick="checkOut()"><span class="btn btn-primary">Order</span></div>');
-			}
+	let tempCart = [];
+
+	if (JSON.parse(localStorage.getItem('cart')) != null) {
+		tempCart = JSON.parse(localStorage.getItem('cart'));
+	}
+
+	if (tempCart.length == 0) {
+		$("#cartHeading").text("Your Cart is empty");
+		$("#checkOut").empty();
+		$("#Cart").empty();
+		$("#cart").text("");
+	} else {
+		$("#cart").html('<i class="fa fa-cart-plus"></i> (' + tempCart.length + ')');
+		$("#cartHeading").text('You have ' + tempCart.length + ' items in your cart:');
+		for (let i = 0; i < tempCart.length; i++) {
+			total += +tempCart[i].Price;
 		}
-	})
+		$("#checkOut").html('<h4 style="color:red">Total: ' + digitGrouping(total) + ' ₫</h4><div class="text-center" onclick="checkOut()"><span class="btn btn-primary">Order</span></div>');
+	}
 }
 
 
 cartList = function() {
-	$.ajax({
-		url: "https://secondbestdb.herokuapp.com/Cart",
-		method: "GET",
-		datatype: "json",
-		success: function(data){
-			$.each(data, function(i, v){
-				let imagesDevice = '<div class="row mx-auto">';
-				for (let i = 1; i < v.Images.length; i++) {
-					imagesDevice += '<a href="' + v.Images[i] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img src="' + v.Images[i] + '" height="50"></a>&nbsp;';
-				}
-				imagesDevice += '</div>';
-				$("#Cart").append(
-					'<div class="col-lg-4 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" onclick="removeFromCart(' + v.id + ')"><span class="btn btn-warning">Remove from cart</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div>'
-				);
-			})
+	let tempCart = JSON.parse(localStorage.getItem('cart'));
+	
+	$.each(tempCart, function(i, v){
+		let imagesDevice = '<div class="row mx-auto">';
+		for (let i = 1; i < v.Images.length; i++) {
+			imagesDevice += '<a href="' + v.Images[i] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img src="' + v.Images[i] + '" height="50"></a>&nbsp;';
 		}
-	})
+		imagesDevice += '</div>';
+		$("#Cart").append(
+			'<div class="col-lg-4 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" onclick="removeFromCart(' + v.id + ')"><span class="btn btn-warning">Remove from cart</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div>'
+		);
+	});
 }
 
 addToCart = function(id) {
+	let tempCart = [];
+
+	if (JSON.parse(localStorage.getItem('cart')) != null) {
+		tempCart = JSON.parse(localStorage.getItem('cart'));
+	}
+
 	$.ajax({
 		url: "https://secondbestdb.herokuapp.com/Devices/" + id,
 		method: "GET",
@@ -335,40 +346,21 @@ addToCart = function(id) {
 			deviceObj.Rom				= data.Rom;
 			
 			let counter = 0;
-			$.ajax({
-				url: "https://secondbestdb.herokuapp.com/Cart",
-				method: "GET",
-				datatype: "json",
-				success: function(data){
-					$.each(data, function(i, v){
-						if (v.id == deviceObj.id) {
-							counter++;
-						}
-					})
-					
-					if (counter == 0) {
-						$.ajax({
-							url: "https://secondbestdb.herokuapp.com/Cart",
-							method: "POST",
-							dataType: "json",
-							contentType: "application/json",
-							data: JSON.stringify(deviceObj),
-						});
-						
-						$.ajax({
-							url: "https://secondbestdb.herokuapp.com/Cart",
-							method: "GET",
-							datatype: "json",
-							success: function(data){
-								checkCart();
-								bootbox.alert("Added!");
-							}
-						});
-					} else {
-						bootbox.alert("This device is already in your cart!");
-					}
+
+			$.each(tempCart, function(i, v){
+				if (v.id == deviceObj.id) {
+					counter++;
 				}
 			});
+
+			if (counter == 0) {
+				tempCart.push(deviceObj);
+				localStorage.setItem('cart', JSON.stringify(tempCart));
+				checkCart();
+				bootbox.alert("Added!");
+			} else {
+				bootbox.alert("This device is already in your cart!");
+			}
 		}
 	});
 	
@@ -388,17 +380,17 @@ removeFromCart = function(id) {
 		},
 		callback: function (result) {
 			if (result) {
-				$.ajax({
-					url: "https://secondbestdb.herokuapp.com/Cart/" + id,
-					method: "DELETE",
-					dataType: "json",
-					success: function(data) {
+				let tempCart = JSON.parse(localStorage.getItem('cart'));
+				$.each(tempCart, function(i, v) {
+					if (id == tempCart[i].id) {
+						tempCart.splice(i, 1);
+						localStorage.setItem('cart', JSON.stringify(tempCart));
+						bootbox.alert("Device removed!");
 						checkCart();
 						$("#Cart").empty();
 						cartList();
 					}
 				});
-				bootbox.alert("Device removed!");
 			}
 		}
 	});
