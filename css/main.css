@@ -2,10 +2,10 @@ body {
 	margin-top: 80px;
 }
 
-
 #logo {
 	font-family: 'Monoton', cursive;
 	font-size: 30px;
+	color: red;
 }
 
 .image0 {

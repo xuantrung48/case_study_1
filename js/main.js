@@ -377,7 +377,7 @@ removeFromCart = function(deviceID) {
 		callback: function (result) {
 			if (result) {
 				let tempCart = JSON.parse(localStorage.getItem('cart'));
-				$.each(tempCart, function(i, v) {
+				for (i = 0; i < tempCart.length; i++) {
 					if (tempCart[i].id == deviceID) {
 						tempCart.splice(i, 1);
 						localStorage.setItem('cart', JSON.stringify(tempCart));
@@ -386,7 +386,7 @@ removeFromCart = function(deviceID) {
 						cartList();
 						bootbox.alert("Device removed!");
 					}
-				});
+				}
 			}
 		}
 	});
