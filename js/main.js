@@ -20,7 +20,7 @@ productsList = function() {
 				}
 				imagesDevice += '</div>';
 				$("#Products").append(
-					'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" width="100%"><a href="javascript:void(0);" class="btn btn-primary buyBtn" onclick="buyDevice(' + v.id + ')">BUY NOW!</a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning buyBtn" onclick="addToCart(' + v.id + ')">Add to Cart <i class="fa fa-cart-plus"></i></a></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
+					'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><h4><span class="badge badge-danger">' + digitGrouping(v.Price) + ' ₫</span></h4></div><br><div class="text-center" width="100%"><a href="javascript:void(0);" class="btn btn-primary buyBtn" onclick="buyDevice(' + v.id + ')">BUY NOW!</a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning buyBtn" onclick="addToCart(' + v.id + ')">Add to Cart <i class="fa fa-cart-plus"></i></a></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
 				);
 			})
 		}
@@ -114,7 +114,7 @@ searchProduct = function() {
 					}
 					imagesDevice += '</div>';
 					$("#Products").append(
-						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" width="100%"><a href="javascript:void(0);" class="btn btn-primary buyBtn" onclick="buyDevice(' + v.id + ')">BUY NOW!</a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning buyBtn" onclick="addToCart(' + v.id + ')">Add to Cart <i class="fa fa-cart-plus"></i></a></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
+						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><h4><span class="badge badge-danger">' + digitGrouping(v.Price) + ' ₫</span></h4></div><br><div class="text-center" width="100%"><a href="javascript:void(0);" class="btn btn-primary buyBtn" onclick="buyDevice(' + v.id + ')">BUY NOW!</a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning buyBtn" onclick="addToCart(' + v.id + ')">Add to Cart <i class="fa fa-cart-plus"></i></a></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
 					);
 				}
 				
@@ -125,7 +125,7 @@ searchProduct = function() {
 					}
 					imagesDevice += '</div>';
 					$("#Products").append(
-						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" width="100%"><a href="javascript:void(0);" class="btn btn-primary buyBtn" onclick="buyDevice(' + v.id + ')">BUY NOW!</a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning buyBtn" onclick="addToCart(' + v.id + ')">Add to Cart <i class="fa fa-cart-plus"></i></a></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
+						'<div class="col-lg-4 col-md-6 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><h4><span class="badge badge-danger">' + digitGrouping(v.Price) + ' ₫</span></h4></div><br><div class="text-center" width="100%"><a href="javascript:void(0);" class="btn btn-primary buyBtn" onclick="buyDevice(' + v.id + ')">BUY NOW!</a>&nbsp;&nbsp;<a href="javascript:void(0);" class="btn btn-warning buyBtn" onclick="addToCart(' + v.id + ')">Add to Cart <i class="fa fa-cart-plus"></i></a></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div></div>'
 					);
 				}
 			})
@@ -309,7 +309,7 @@ cartList = function() {
 		}
 		imagesDevice += '</div>';
 		$("#Cart").append(
-			'<div class="col-lg-4 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><span class="btn btn-danger">' + digitGrouping(v.Price) + ' ₫</span></div><br><div class="text-center" onclick="removeFromCart(' + v.id + ')"><span class="btn btn-warning">Remove from cart</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div>'
+			'<div class="col-lg-4 mb-4"><div class="card h-100"><a href="' + v.Images[0] + '"data-toggle="lightbox" data-gallery="gallery' + v.id + '" data-title="' + v.Name + '"><img class="card-img-top image0" src="' + v.Images[0] + '"></a><br>'+ imagesDevice +'<div class="card-body"><div class="text-center" style="height:50px"><h4 class="card-title">' + v.Name + '</h4></div><div class="card-text"><br><div class="text-center"><h4><span class="badge badge-danger">' + digitGrouping(v.Price) + ' ₫</span></h4></div><br><div class="text-center" onclick="removeFromCart(' + v.id + ')"><span class="btn btn-warning">Remove from cart</span></div><br>Brand: ' + v.Brand.Name + '<br>CPU: ' + v.CPU + '<br>Screen: '  + v.Screen + '<br>OS: ' + v.OS + '<br>Rear Camera: ' + v.RearCamera + '<br>Front Camera: ' + v.FrontCamera + '<br>Ram: ' + v.Ram + ' GB<br>Rom: ' + v.Rom + ' GB<br>Status: ' + v.Status + ' %</div></div>'
 		);
 	});
 }
@@ -362,7 +362,7 @@ addToCart = function(id) {
 	
 }
 
-removeFromCart = function(id) {
+removeFromCart = function(deviceID) {
 	bootbox.confirm({
 		title: "Remove device?",
 		message: "Do you really want to remove this device from your cart?",
@@ -378,15 +378,15 @@ removeFromCart = function(id) {
 			if (result) {
 				let tempCart = JSON.parse(localStorage.getItem('cart'));
 				$.each(tempCart, function(i, v) {
-					if (id == tempCart[i].id) {
+					if (tempCart[i].id == deviceID) {
 						tempCart.splice(i, 1);
 						localStorage.setItem('cart', JSON.stringify(tempCart));
 						checkCart();
 						$("#Cart").empty();
 						cartList();
+						bootbox.alert("Device removed!");
 					}
 				});
-				bootbox.alert("Device removed!");
 			}
 		}
 	});
