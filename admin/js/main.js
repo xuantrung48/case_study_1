@@ -19,6 +19,18 @@ $(document).on("click", '[data-toggle="lightbox"]', function(event) {
 	$(this).ekkoLightbox();
 });
 
+createThumb = function() {
+	$("#thumb0").html("<img src='" + $("#Images0").val() + "' height='40'>");
+	$("#thumb1").html("<img src='" + $("#Images1").val() + "' height='40'>");
+	$("#thumb2").html("<img src='" + $("#Images2").val() + "' height='40'>");
+}
+
+removeThumb = function() {
+	$("#thumb0").html("");
+	$("#thumb1").html("");
+	$("#thumb2").html("");
+}
+
 device.initBrand = function() {
 	$.ajax({
 		url: "https://secondbestdb.herokuapp.com/Brands",
@@ -134,6 +146,7 @@ device.reset = function() {
 	$("#FrontCamera").val('');
 	$("#Ram").val('');
 	$("#Rom").val('');
+	removeThumb();
 	var validator = $("#formAddEditDevice").validate();
 	validator.resetForm();
 }
@@ -185,6 +198,7 @@ device.get = function(id) {
 			var validator = $("#formAddEditDevice").validate();
 			validator.resetForm();
 			$('#myModal').modal('show');
+			createThumb();
 		}
 	});
 }

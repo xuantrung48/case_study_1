@@ -317,7 +317,7 @@ cartList = function() {
 addToCart = function(id) {
 	let tempCart = [];
 
-	if (JSON.parse(localStorage.getItem('cart')) != null) {
+	if (localStorage.getItem('cart') != null) {
 		tempCart = JSON.parse(localStorage.getItem('cart'));
 	}
 
@@ -353,9 +353,9 @@ addToCart = function(id) {
 				tempCart.push(deviceObj);
 				localStorage.setItem('cart', JSON.stringify(tempCart));
 				checkCart();
-				bootbox.alert("Added!");
+				bootbox.alert(deviceObj.Name + " added to your Cart!");
 			} else {
-				bootbox.alert("This device is already in your cart!");
+				bootbox.alert(deviceObj.Name + " is already in your Cart!");
 			}
 		}
 	});
@@ -365,7 +365,7 @@ addToCart = function(id) {
 removeFromCart = function(deviceID) {
 	bootbox.confirm({
 		title: "Remove device?",
-		message: "Do you really want to remove this device from your cart?",
+		message: "Do you really want to remove this device from your Cart?",
 		buttons: {
 			cancel: {
 				label: '<i class="fa fa-times"></i> No'
