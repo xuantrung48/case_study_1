@@ -385,6 +385,7 @@ removeFromCart = function(deviceID) {
 						$("#Cart").empty();
 						cartList();
 						bootbox.alert("Device removed!");
+						break;
 					}
 				}
 			}
