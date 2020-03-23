@@ -164,7 +164,7 @@ device.drawTable = function() {
 					imagesDevice += "<a href='" + v.Images[i] + "'data-toggle='lightbox' data-gallery='gallery" + v.id + "' data-title='" + v.Name + "'><img src='" + v.Images[i] + "' height='50'></a> ";
 				}
 				$("#tbDevices").append(
-					"<tr><td>" + v.id + "</td><td>" + v.Name + "</td><td>" + imagesDevice + "</td><td>" + v.Brand.Name + "</td><td>" + v.CPU + "</td><td>" + v.Screen + "</td><td>" + v.OS + "</td><td>" + v.RearCamera + "</td><td>" + v.FrontCamera + "</td><td>" + v.Ram + " GB</td><td>" + v.Rom + " GB</td><td>" + v.Status + " %</td><td>" + digitGrouping(v.Price) + " ₫</td><td><a href='javascript:void(0);' onclick='device.get(" + v.id + ")'><i class='fa fa-edit' title='Edit this device'></i></a> <a href='javascript:void(0);' onclick='device.remove(" + v.id + ")'><i class='fa fa-trash' title='Remove this device'></i></a></td></tr>"
+					"<tr><td>" + v.id + "</td><td>" + v.Name + "</td><td>" + imagesDevice + "</td><td>" + v.Brand.Name + "</td><td><b>CPU:</b> " + v.CPU + "<br><b>Screen:</b> " + v.Screen + "<br><b>OS:</b> " + v.OS + "<br><b>Rear Camera:</b> " + v.RearCamera + "<br><b>Front Camera:</b> " + v.FrontCamera + "<br><b>Ram:</b> " + v.Ram + " GB<br><b>Rom:</b> " + v.Rom + " GB</td><td>" + v.Status + " %</td><td>" + digitGrouping(v.Price) + " ₫</td><td><a href='javascript:void(0);' onclick='device.get(" + v.id + ")'><i class='fa fa-edit' title='Edit this device'></i></a> <a href='javascript:void(0);' onclick='device.remove(" + v.id + ")'><i class='fa fa-trash' title='Remove this device'></i></a></td></tr>"
 				);
 			});
 			$("#devicesManagement").DataTable();

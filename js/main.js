@@ -216,33 +216,33 @@ checkOut = function() {
 
 orderCart = function() {
 	if($("#OrderForm").valid()) {
-		let tempCart = JSON.parse(localStorage.getItem('cart'));
-		
-		$.each(tempCart, function(i, v){
-			$.ajax({
-				url: "https://secondbestdb.herokuapp.com/Devices/" + v.id,
-				method: "GET",
-				datatype: "json",
-				success: function(data){
-					let orderObj					= {};
+        let tempCart = JSON.parse(localStorage.getItem('cart'));
+        $.each(tempCart, function(i, v){
+            let tempDevice = v;
+            $.ajax({
+                url: "https://secondbestdb.herokuapp.com/Devices/" + v.id,
+                method: "DELETE",
+                dataType: "json",
+                success: function() {
+                    let orderObj					= {};
 					orderObj.Name					= $("#Name").val();
 					orderObj.PhoneNumber			= $("#PhoneNumber").val();
 					orderObj.Address				= $("#Address").val();
 					orderObj.OrderStatus			= "Pending";
 					orderObj.BuyDevice				= {};
-					orderObj.BuyDevice.id			= data.id;
-					orderObj.BuyDevice.Name			= data.Name;
-					orderObj.BuyDevice.Images		= data.Images;
-					orderObj.BuyDevice.Brand		= data.Brand;
-					orderObj.BuyDevice.Status		= data.Status;
-					orderObj.BuyDevice.Price		= data.Price;
-					orderObj.BuyDevice.CPU			= data.CPU;
-					orderObj.BuyDevice.Ram			= data.Ram;
-					orderObj.BuyDevice.Rom			= data.Rom;
-					orderObj.BuyDevice.Screen		= data.Screen;
-					orderObj.BuyDevice.OS			= data.OS;
-					orderObj.BuyDevice.RearCamera	= data.RearCamera;
-					orderObj.BuyDevice.FrontCamera	= data.FrontCamera;
+					orderObj.BuyDevice.id			= tempDevice.id;
+					orderObj.BuyDevice.Name			= tempDevice.Name;
+					orderObj.BuyDevice.Images		= tempDevice.Images;
+					orderObj.BuyDevice.Brand		= tempDevice.Brand;
+					orderObj.BuyDevice.Status		= tempDevice.Status;
+					orderObj.BuyDevice.Price		= tempDevice.Price;
+					orderObj.BuyDevice.CPU			= tempDevice.CPU;
+					orderObj.BuyDevice.Ram			= tempDevice.Ram;
+					orderObj.BuyDevice.Rom			= tempDevice.Rom;
+					orderObj.BuyDevice.Screen		= tempDevice.Screen;
+					orderObj.BuyDevice.OS			= tempDevice.OS;
+					orderObj.BuyDevice.RearCamera	= tempDevice.RearCamera;
+					orderObj.BuyDevice.FrontCamera	= tempDevice.FrontCamera;
 					
 					$.ajax({
 						url: "https://secondbestdb.herokuapp.com/Orders",
@@ -251,20 +251,14 @@ orderCart = function() {
 						contentType: "application/json",
 						data: JSON.stringify(orderObj)
 					});
-					
-					$.ajax({
-						url: "https://secondbestdb.herokuapp.com/Devices/" + v.id,
-						method: "DELETE",
-						dataType: "json"
-					});
-					
-					$("#Cart").append("<h3 class='col-12' style='color:red'>You ordered " + v.Name + "! Thank you!</h3><br>");
-				},
-				error: function(){
-					$("#Cart").append("<h3 class='col-12' style='color:red'>We are sorry! " + v.Name + " has been sold!</h3><br>");
-				},
-			});
-		});
+
+					$("#Cart").append("<h3 class='col-12' style='color:red'>You ordered " + tempDevice.Name + "! Thank you!</h3><br>");
+                },
+                error: function() {
+                    $("#Cart").append("<h3 class='col-12' style='color:red'>We are sorry! " + tempDevice.Name + " has been sold!</h3><br>");
+                }
+            });
+        })
 		
 		$('#OrderModal').modal('hide');
 		
@@ -294,7 +288,7 @@ checkCart = function() {
 		for (let i = 0; i < tempCart.length; i++) {
 			total += +tempCart[i].Price;
 		}
-		$("#checkOut").html('<h4 style="color:red">Total: ' + digitGrouping(total) + ' ₫</h4><div class="text-center" onclick="checkOut()"><span class="btn btn-primary">Order</span></div>');
+		$("#checkOut").html('<h4 style="color:red">Total: ' + digitGrouping(total) + ' ₫</h4><div class="text-center" onclick="checkOut()"><span class="btn btn-primary">Order Now!</span></div>');
 	}
 }
 
@@ -353,7 +347,7 @@ addToCart = function(id) {
 				tempCart.push(deviceObj);
 				localStorage.setItem('cart', JSON.stringify(tempCart));
 				checkCart();
-				bootbox.alert(deviceObj.Name + " added to your Cart!");
+				bootbox.alert(deviceObj.Name + " is added to your Cart!");
 			} else {
 				bootbox.alert(deviceObj.Name + " is already in your Cart!");
 			}

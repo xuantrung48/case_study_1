@@ -4,12 +4,15 @@
 		<meta charset="utf-8">
 		<title>Devices Management</title>
 		<link rel="icon" href="../images/smartphone-icon.png">
-		<!-- <link rel="stylesheet" href="../css/bootstrap.min.css">
+
+		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/ekko-lightbox.css">
-		<link rel="stylesheet" href="../css/jquery.dataTables.min.css"> -->
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+		<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+		
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
-		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+		<link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"> -->
+		
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<link rel="stylesheet" href="css/main.css">
 	</head>
@@ -53,13 +56,7 @@
 								<th>Device's Name</th>
 								<th>Images</th>
 								<th>Brand</th>
-								<th>CPU</th>
-								<th>Screen</th>
-								<th>OS</th>
-								<th>Rear Camera</th>
-								<th>Front Camera</th>
-								<th>Ram</th>
-								<th>Rom</th>
+								<th>Specifications</th>
 								<th>Status</th>
 								<th>Price</th>
 								<th>Action</th>
@@ -91,29 +88,34 @@
 							</div>
 							<div class="row form-group">
 								<div class="col-3">Image's URLs:</div>
-								<div class="col-7"><input type="text" id="Images0" class="form-control" onchange="createThumb()" data-rule-url="true" placeholder="Image's URL 1"></div>
+								<div class="col-7"><input type="text" id="Images0" class="form-control" oninput="createThumb()" data-rule-url="true" placeholder="Image's URL 1"></div>
 								<div class="col-2" id="thumb0"></div>
 							</div>
 							<div class="row form-group">
 								<div class="col-3">
 								</div>
-								<div class="col-7"><input type="text" id="Images1" class="form-control" onchange="createThumb()" data-rule-url="true" placeholder="Image's URL 1"></div>
+								<div class="col-7"><input type="text" id="Images1" class="form-control" oninput="createThumb()" data-rule-url="true" placeholder="Image's URL 1"></div>
 								<div class="col-2" id="thumb1"></div>
 							</div>
 							<div class="row form-group">
 								<div class="col-3">
 								</div>
-								<div class="col-7"><input type="text" id="Images2" class="form-control" onchange="createThumb()" data-rule-url="true" placeholder="Image's URL 1"></div>
+								<div class="col-7"><input type="text" id="Images2" class="form-control" oninput="createThumb()" data-rule-url="true" placeholder="Image's URL 1"></div>
 								<div class="col-2" id="thumb2"></div>
 							</div>
 							<div class="row form-group">
 								<div class="col-3">Brand:</div>
-								<div class="col-3 ">
+								<div class="col-9 ">
 									<select id="Brand" class="form-control" name="Brand" data-rule-required="true">
 									</select>
 								</div>
+							</div>
+							<div class="row form-group">
+								<div class="col-12"><h5>Specifications:</h5></div>
+							</div>
+							<div class="row form-group">
 								<div class="col-3">CPU:</div>
-								<div class="col-3"><input type="text" id="CPU" class="form-control"></div>
+								<div class="col-9"><input type="text" id="CPU" class="form-control"></div>
 							</div>
 							<div class="row form-group">
 								<div class="col-3">Screen:</div>
@@ -149,18 +151,20 @@
 			</div>
 		</div>
 		
-		<!-- <script src="../js/jquery.min.js"></script>
+		<script src="../js/jquery.min.js"></script>
 		<script src="../js/bootstrap.min.js"></script>
 		<script src="../js/ekko-lightbox.min.js"></script>
 		<script src="../js/jquery.validate.min.js"></script>
 		<script src="../js/bootbox.min.js"></script>
-		<script src="../js/jquery.dataTables.min.js"></script> -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="../js/jquery.dataTables.min.js"></script>
+		
+		<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
-		<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+		<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script> -->
+		
 		<script src="js/main.js"></script>
 		<script>
 			$(function(){
